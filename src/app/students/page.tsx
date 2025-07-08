@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Navigation } from '@/components/navigation'
+import { DashboardLayout } from '@/components/dashboard-layout'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -135,10 +135,8 @@ export default function StudentsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation user={mockUser} />
-      
-      <main className="container mx-auto px-4 py-6">
+    <DashboardLayout user={mockUser}>
+      <div className="container mx-auto px-4 py-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -312,7 +310,7 @@ export default function StudentsPage() {
             </Table>
           </CardContent>
         </Card>
-      </main>
-    </div>
+      </div>
+    </DashboardLayout>
   )
 }

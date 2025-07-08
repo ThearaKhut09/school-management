@@ -1,6 +1,6 @@
 'use client'
 
-import { Navigation } from '@/components/navigation'
+import { DashboardLayout } from '@/components/dashboard-layout'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -105,10 +105,8 @@ export default function DashboardPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation user={mockUser} />
-      
-      <main className="container mx-auto px-4 py-6">
+    <DashboardLayout user={mockUser}>
+      <div className="container mx-auto px-4 py-6">
         {/* Welcome Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
@@ -280,7 +278,7 @@ export default function DashboardPage() {
             ))}
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </DashboardLayout>
   )
 }
